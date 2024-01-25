@@ -1,0 +1,8 @@
+[user]
+	name = rebop
+	email = me@reboplim.com
+	signingkey = E8EC85214247E8CD!
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main

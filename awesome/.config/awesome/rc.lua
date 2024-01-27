@@ -41,7 +41,17 @@ awful.layout.layouts = {
     awful.layout.suit.floating,
 }
 
-textclock = wibox.widget.textclock()
+textclock = wibox.widget.textclock(" %a %b %d, %H:%M ")
+
+battery = wibox.widget.textbox()
+battery_timer = timer({ timeout = 5 })
+battery_timer:connect_signal("timeout", function()
+    fh = assert(io.popen("acpi | awk -F', ' '{print $2}'"))
+    battery:set_text(" " .. fh:read("*l") .. " ")
+    fh:close()
+end)
+battery_timer:start()
+battery_timer:emit_signal("timeout")
 
 local taglist_buttons = gears.table.join(
     awful.button({ }, 1, function(t) t:view_only() end)
@@ -106,6 +116,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.tasklist,
         {
             layout = wibox.layout.fixed.horizontal,
+            battery,
             textclock,
             s.layoutbox,
         },

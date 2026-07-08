@@ -7,7 +7,11 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+
+GREEN="$(tput setaf 2)"
+BLUE="$(tput setaf 4)"
+RESET="$(tput sgr0)"
+PS1='[${GREEN}\u${RESET}@${BLUE}\h${RESET} \W]\$ '
 
 export GPG_TTY=$(tty)
 export MANPATH=$MANPATH:/usr/local/texlive/2026/texmf-dist/doc/man

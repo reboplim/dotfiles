@@ -13,3 +13,4 @@ export GPG_TTY=$(tty)
 export MANPATH=$MANPATH:/usr/local/texlive/2026/texmf-dist/doc/man
 export INFOPATH=$INFOPATH:/usr/local/texlive/2026/texmf-dist/doc/info
 export PATH=$PATH:/usr/local/texlive/2026/bin/x86_64-linux
+export QT_QPA_PLATFORM=xcb

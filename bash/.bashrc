@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
 GREEN="$(tput setaf 2)"
-BLUE="$(tput setaf 4)"
+BLUE="$(tput setaf 6)"
 RESET="$(tput sgr0)"
 PS1='[${GREEN}\u${RESET}@${BLUE}\h${RESET} \W]\$ '
 

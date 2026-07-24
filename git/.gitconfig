@@ -4,6 +4,7 @@
     signingkey = E8EC85214247E8CD!
 [core]
     editor = nvim
+	autocrlf = input
 [init]
     defaultBranch = main
 [commit]
